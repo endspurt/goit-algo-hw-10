@@ -2,13 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import quad
 
-# Визначення функції витрат або прибутку (приклад: f(x) = x ** 2)
+# Визначення нової функції
 def f(x):
-    return x ** 2
+    return np.sin(x)
 
 # Межі інтегралу
 a = 0
-b = 2
+b = np.pi
 
 # Метод Монте-Карло для обчислення інтегралу
 def monte_carlo_integration(f, a, b, num_samples=10000):
@@ -47,6 +47,6 @@ ax.set_ylabel('f(x)')
 # Додаємо межі інтегрування
 ax.axvline(x=a, color='gray', linestyle='--')
 ax.axvline(x=b, color='gray', linestyle='--')
-ax.set_title(f'Графік інтегрування f(x) = x^2 від {a} до {b}')
+ax.set_title(f'Графік інтегрування f(x) = sin(x) від {a} до {b}')
 plt.grid()
 plt.show()
